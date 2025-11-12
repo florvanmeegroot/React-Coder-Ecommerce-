@@ -1,42 +1,68 @@
+/* VARIABLES CSS*/
+:root {
+  --color-principal: #f522b8;
+  --color-secundario: #dff984;
+  --color-secundario-ligth: hsl(73, 91%, 75%, 30%);
+  --color-accent: #5af646;
+  --background-color: #fef0f9;
+  --espaciado: 16px;
+  --fuente-principal: "Inter", sans-serif;
+}
+
+/* Ajustes generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
+  display: block;
+}
+
+body {
+  background-color: var(--background-color);
+  display: block;
+}
+
+/* HEADER */
+.header {
+  background-color: var(--color-secundario-ligth);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  height: 6.5em;
+  padding: 1em;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tittle-header {
+  font-family: var(--fuente-principal);
+  color: black;
+  font-size: 2.5em;
+  font-weight: 800;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.nav-header {
+  margin-top: 1em;
+  display: flex;
+  gap: 2em;
 }
 
-.card {
-  padding: 2em;
+.nav-header a {
+  font-family: var(--fuente-principal);
+  color: var(--color-principal);
 }
 
-.read-the-docs {
-  color: #888;
+.nav-header a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
