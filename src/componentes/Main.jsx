@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from "react";
-import Card from "../componentes-variables/Card";
+import Card from "./Card";
 import Filtros from "./Filtros";
 
 function Main() {
-  const [productos, setProductos] = useState([]); 
+  const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("Todos");
 
   useEffect(() => {
     const fetchProductos = async () => {
       try {
-        const response = await fetch("src/data/productos.json"); 
+        const response = await fetch("src/data/productos.json");
         const data = await response.json();
         setProductos(data);
         setLoading(false);
       } catch (error) {
-        console.error("Lo siento, hay un error al cargar los productos:", error);
+        console.error(
+          "Lo siento, hay un error al cargar los productos:",
+          error
+        );
       }
     };
 
@@ -47,7 +50,7 @@ function Main() {
             title={item.title}
             categoria={item.categoria}
             precio={item.precio}
-            id={item.id}   
+            id={item.id}
             description={item.description}
           />
         ))}
@@ -57,4 +60,3 @@ function Main() {
 }
 
 export default Main;
-

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useCart } from "../componentes-variables/CartContext";
+import { useCart } from "./CartContext";
+import { HashLink } from "react-router-hash-link";
 
 function Header() {
   const { cart } = useCart();
@@ -16,10 +17,13 @@ function Header() {
 
       <nav className="nav-header">
         <Link to="/">Inicio</Link>
-        <a href="/#categorias">Categorías</a>
+        <HashLink smooth to="/#categorias">
+          Ir a Categorías
+        </HashLink>
         <Link to="/contacto">Contacto</Link>
         <Link to="/carrito">Mi Carrito</Link>
       </nav>
+
       <div className="cart-icon">
         <Link to="/carrito">
           <img

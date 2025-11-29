@@ -8,6 +8,7 @@
   --background-color: #fef0f9;
   --espaciado: 16px;
   --fuente-principal: "Inter", sans-serif;
+  --box-shadow: hsla(0, 0%, 0%, 0.062) 4px 0px 4px 4px;
 }
 
 /* Ajustes generales */
@@ -51,6 +52,7 @@ button:focus-visible {
   flex-direction: column;
   align-items: center;
   padding: 1.5em;
+  box-shadow: var(--box-shadow);
 }
 
 .logo {
@@ -87,11 +89,12 @@ button:focus-visible {
   display: flex;
   bottom: 20px;
   right: 20px;
-  background: var(--color-principal); ;
+  background: var(--color-principal);
   color: #fff;
   padding: 15px;
   border-radius: 50%;
-} 
+  box-shadow: var(--box-shadow);
+}
 
 .icono-carrito {
   max-width: 1.1em;
@@ -179,8 +182,9 @@ button:focus-visible {
   border-radius: 32px;
 }
 
-/* BOTON */
-.btn-card {
+/* BOTONES */
+.btn-card,
+.btn-agregar {
   background-color: var(--color-principal);
   border: none;
   border-radius: 32px;
@@ -193,13 +197,16 @@ button:focus-visible {
   transition: all 0.3s ease;
 }
 
-.btn-card a {
+.btn-card a,
+.btn-agregar a {
   color: white;
   text-decoration: none;
 }
 
 .btn-card:hover,
-.btn-card:active {
+.btn-card:active,
+.btn-agregar:hover,
+.btn-agregar:active {
   border: 0px;
   scale: 1.2;
 }
@@ -251,8 +258,7 @@ button:focus-visible {
 }
 
 .volver {
-  padding: 1.5em;
-  float: right;
+  text-align: right;
 }
 
 .btn-volver {
